@@ -1,0 +1,47 @@
+.center{
+
+    text-align: center;
+
+}
+
+.intro-sentece{
+
+    display: inline-block;
+    max-width: 100px;
+    height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+
+    font-size: calc(1.425rem + 2.1vw);
+    font-weight: 300;
+    line-height: 1.2;
+
+}
+
+.carousel-divider{
+
+    border-top: solid 2px magenta;
+    border-bottom: solid 2px magenta;
+
+}
+
+.p-text-size{
+
+    font-size: 25px;
+
+}
+
+.t-text-size{
+
+    font-size: 50px;
+
+}
+
+.space{
+
+    margin: 25px;
+
+}
+
+

@@ -1,0 +1,110 @@
+<html>
+
+    <app-navigation-bar></app-navigation-bar>
+
+    <div class="space-top"> </div>
+
+    <div class="navbar navbar-expand-lg div-medium ">
+
+      <div class=" title-property shadow-lg">
+
+        <h1 class="display-6">Employee Details</h1>
+
+      </div>
+
+        
+
+    </div>
+
+    <div *ngIf="selectedEmployee" class="div-medium shadow-lg p-3 mb-5 bg-body rounded" >
+
+        <form class="row g-3 needs-validation">
+
+            <div class="col-md-3">
+              <label for="validationCustom01" class="form-label">ID</label>
+              <input type="text" class="form-control" id="ID" [readonly]="true" name="ID"  [(ngModel)]="selectedEmployee.employee_ID">
+            </div>
+
+            <div class="col-md-3">
+              <label for="validationCustom02" class="form-label">First name</label>
+              <input type="text" class="form-control" [readonly]="true" [(ngModel)]="selectedEmployee.employee_firstName" name="firstName" #firstNameControl="ngModel">
+            </div>
+
+            <div class="col-md-3">
+                <label for="validationCustom02" class="form-label">Middle name</label>
+                <input type="text" class="form-control" [readonly]="true" [(ngModel)]="selectedEmployee.employee_middleName" name="middleName" #middleNameControl="ngModel">
+              </div>
+
+              <div class="col-md-3">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" [readonly]="true" [(ngModel)]="selectedEmployee.employee_lastName" name="lastName" #lastNameControl="ngModel">
+              </div>
+              
+              <div class="col-aj-2">
+                <label for="validationCustom02" class="form-label">Gender</label>
+                <input type="text" class="form-control" [readonly]="true" [(ngModel)]="selectedEmployee.employee_gender" name="gender" #genderControl="ngModel">
+              </div>
+
+              <div class="col-aj-2">
+                <label for="validationCustom02" class="form-label">Contact number</label>
+                <input type="text" class="form-control"[readonly]="true" [(ngModel)]="selectedEmployee.employee_contactNumber" name="contactNumber" #contactNumberControl="ngModel">
+              </div>
+
+              <div class="col-aj-2-2">
+                <label for="validationCustom02" class="form-label">E-mail</label>
+                <input type="email" class="form-control" [email]="true" [readonly]="true" [(ngModel)]="selectedEmployee.employee_emailAddress" name="email" #eMailControl="ngModel">
+              </div>
+
+              <div class="col-aj-2">
+                <label for="validationCustom02" class="form-label">Birth Date</label>
+                <input type="email" class="form-control" [readonly]="true" [ngModel]="selectedEmployee.employee_birthDate | date: 'MM/dd/yyyy'" name="birthDate" #birthDateControl="ngModel">
+              </div>
+
+              <div class="col-aj-1-1">
+                <label for="validationCustom02" class="form-label">Age </label>
+                <input type="text" class="form-control" [readOnly]="true"  [(ngModel)]="selectedEmployee.employee_age" name="age" #ageControl="ngModel">
+
+              </div>
+
+              <label for="validationCustom02" class="form-label thin">Address</label>
+
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="addressCity" [readonly]="true" [(ngModel)]="selectedEmployee.employee_city" name="addressCity" #addressCityControl="ngModel">
+              </div>
+
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="addressProvince" [readonly]="true" [(ngModel)]="selectedEmployee.employee_province" name="addressProvince" #addressProvinceControl="ngModel"> 
+              </div>
+
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="addressCountry"[readonly]="true" [(ngModel)]="selectedEmployee.employee_country" name="addressCountry" #addressCountryControl="ngModel">
+              </div>   
+
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Office Assignment</label>
+                <input type="text" class="form-control" id="officeAssignment" [readonly]="true" [(ngModel)]="selectedEmployee.employee_officeAssignment" name="officeAssignment" #officeAssignmentControl="ngModel">
+              </div>
+
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Position</label>
+                <input type="text" class="form-control" id="position" [readonly]="true" [(ngModel)]="selectedEmployee.employee_position" name="position" #positionControl="ngModel">
+              </div>
+
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label plain-number-field">Monthly Salary</label>
+                <input type="number" class="form-control" id="monthlySalary" [readonly]="true" [(ngModel)]="selectedEmployee.employee_monthlySalary" name="monthlySalary" #monthlySalaryControl="ngModel">
+              </div>
+
+              <div class="col-aj-1">
+                <button class="btn btn-secondary" type="button" (click)="onUpdate()">Update</button>
+              </div>
+    
+
+          </form>
+          
+
+    </div>
+
+    <button type="button" class="grow btn btn-light btn-medium rounded shadow-lg" routerLink="/employee-list">Back to List</button>
+
+</html>

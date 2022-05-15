@@ -1,0 +1,57 @@
+.thin{
+
+    height: 10px;
+
+}
+
+.col-aj-1{
+
+    flex:0 0 auto;
+    width:8%
+
+}
+
+.col-aj-2{
+
+    flex:0 0 auto;
+    width:20%
+
+}
+
+.col-aj-1-1{
+
+    flex:0 0 auto;
+    width:10%
+
+}
+
+.col-aj-2-2{
+
+    flex:0 0 auto;
+    width:30%
+
+}
+
+.btn-medium{
+
+    margin: 0px 15% 20px 15%;
+    
+}
+
+.left{
+
+    margin-left: auto !important;
+
+}
+
+.title-property{
+
+    width: 100%;
+    text-align: center;
+    background-color: #e9edf2;
+
+}
+
+
+
+

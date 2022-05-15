@@ -1,0 +1,56 @@
+.thin{
+
+    height: 10px;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+
+  -webkit-appearance: none;
+  margin: 0;
+
+}
+
+input.ng-invalid.ng-touched{
+
+  border: solid 2px red;
+
+}
+
+.col-aj-1{
+
+  flex:0 0 auto;
+  width:6.5%
+
+}
+
+.col-aj-2{
+
+  flex:0 0 auto;
+  width:20%
+
+}
+
+.col-aj-1-1{
+
+  flex:0 0 auto;
+  width:10%
+
+}
+
+.col-aj-1-2{
+
+  flex:0 0 auto;
+  width:13%
+
+}
+
+.col-aj-2-2{
+
+  flex:0 0 auto;
+  width:30%
+
+}
+
+

@@ -1,0 +1,46 @@
+.transparent{
+
+    background-color: rgba(255, 255, 255, 0.3);
+
+
+}
+
+a{
+
+font-size: 20px;
+
+}
+
+.active {
+
+    text-decoration:solid 3px green ;
+    
+}
+
+.big{
+
+    font-size: 40px;
+
+}
+
+.medium{
+
+    font-size: 30px;
+
+}
+
+.logo-properties{
+
+    text-align: center;
+
+}
+
+.active{
+
+    border-bottom: #f2aae0 solid 3px;
+
+}
+
+
+
+

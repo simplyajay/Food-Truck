@@ -1,0 +1,105 @@
+<html>
+
+    <app-navigation-bar></app-navigation-bar>
+
+    <div class="space-top"> </div>
+  
+    <div class="navbar navbar-expand-lg div-medium transparent-full ">
+
+      <ul class="navbar-nav me-margin-right mb-2 mb-lg-0">
+
+        <button type="button" class="btn btn-light shadow-lg grow semi-big" (click)="onAdd()">Add New Employee</button>
+
+      </ul>
+        
+      <form class="me-auto search-box-width">
+          
+        <input class="form-control me-3 shadow-lg semi-big" name="search" type="search" placeholder="Search by name" aria-label="Search" [(ngModel)]="searched">
+
+      </form>
+
+      <div class=" title-property shadow-lg">
+
+          <h2 class="display-6 ">List of Employees</h2>
+
+      </div>
+
+    </div>
+
+    <div class="div-medium shadow-lg p-3 mb-5 bg-body rounded">
+
+        <table class="table table-striped">
+
+            <thead>
+
+              <tr>
+
+                <th class="id-space text" scope="col">ID</th>
+                <th class="name-space text" scope="col">Name</th>
+                <th class="email-space text" scope="col">Email</th>
+                <th class="detail-space text" scope="col"></th>
+              </tr>
+              
+            </thead>
+
+            <tbody>
+
+              <tr *ngFor="let employee of employeeList | search: searched | slice: (page-1) * pageSize : page * pageSize">
+
+                <td class="id-space text" scope="row">{{employee.employee_ID}}</td>
+                <td class="name-space text">{{employee.employee_firstName + " " + employee.employee_middleName.charAt(0) + ". " + employee.employee_lastName}}</td>
+                <td class="email-space text">{{employee.employee_emailAddress}}</td>
+                <td class="detail-space text">
+
+                    <button class="btn btn-outline-secondary btn-space-right" type="button" routerLink="/employee-details/{{employee.employee_ID}}"> Details </button>
+                    <button class="btn btn-outline-danger btn-space-left" type="button" (click)="onDelete(employee.employee_ID)"> Delete </button>
+
+                </td>
+
+              </tr>
+
+              <td colspan="4" *ngIf="(employeeList | search: searched)?.length == 0">
+
+                <p *ngIf="employeeList.length != 0" class="text-secondary no-result center font-weight-bold" >No results found</p>
+                <p *ngIf="employeeList.length == 0" class="text-secondary no-result center font-weight-bold" >There are currently no records</p>
+
+              </td>
+
+              
+
+            </tbody>
+
+            <tfoot></tfoot>
+
+          </table>
+
+          <div class="row g-3">
+
+            <div  class="col-md-6">
+
+              <h6 *ngIf="searched.length >= 1">{{(employeeList | search: searched).length}} results for search " {{searched}} "</h6>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <div>
+
+                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="(employeeList | search: searched).length" class="d-flex flex-row-reverse">
+
+                  <ng-template ngbPaginationNumber let-page>{{ page }}</ng-template>
+                  
+                </ngb-pagination>
+
+              </div>
+
+            </div>
+
+            
+
+          </div>
+          
+
+    </div>
+
+</html>

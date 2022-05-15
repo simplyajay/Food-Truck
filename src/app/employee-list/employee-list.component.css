@@ -1,0 +1,90 @@
+.id-space{
+
+    width: 15%;
+
+}
+
+.name-space{
+
+    width: 35%;
+
+}
+
+.email-space{
+
+    width: 30%;
+
+}
+
+.detail-space{
+
+    width: 20%;
+    text-align: right;
+
+
+}
+
+.text{
+
+    font-size: 20px;
+
+}
+
+.transparent-semi{
+
+    background-color: rgba(255, 255, 255, 0.3);
+
+
+}
+
+.no-result{
+
+    font-size: 50px;
+
+}
+
+.transparent-full{
+
+    background-color: rgba(255, 255, 255, 0);
+
+
+}
+
+.me-margin-right{
+
+    margin-right: 20px;
+
+}
+
+.semi-big{
+
+    font-size: 20px;
+
+}
+
+.to-right{
+
+    text-align: right;
+
+}
+
+.search-box-width{
+
+    width: 30%;
+
+}
+
+.title-property{
+
+    width: 52%;
+    text-align: center;
+    background-color: #e9edf2;
+
+}
+
+
+
+
+
+
+

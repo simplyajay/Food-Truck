@@ -1,0 +1,154 @@
+<div class="div-medium center">
+
+  <h1 class="display-6">Add New Employee</h1>
+
+</div>
+
+<div>
+
+  <form class="row g-3 needs-validation" id="form" #myForm="ngForm" (ngSubmit)="submitForm(myForm, 0)">
+
+    <div class="col-md-3">
+      <label for="validationCustom01" class="form-label">ID</label>
+      <input type="text" class="form-control" id="ID" [readonly]="true" required name="ID"
+        [(ngModel)]="newEmployee.employee_ID">
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom02" class="form-label">First name</label>
+      <input type="text" class="form-control" placeholder="First name" required
+        [(ngModel)]="newEmployee.employee_firstName" name="firstName" #firstNameControl="ngModel">
+      <div *ngIf="firstNameControl.invalid && firstNameControl.touched" class="invalid-feedback d-block">
+        First name is required
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom02" class="form-label">Middle name</label>
+      <input type="text" class="form-control" placeholder="Middle name" required
+        [(ngModel)]="newEmployee.employee_middleName" name="middleName" #middleNameControl="ngModel">
+      <div *ngIf="middleNameControl.invalid && middleNameControl.touched" class="invalid-feedback d-block">
+        Middle name is required
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" class="form-control" placeholder="Last name" required
+        [(ngModel)]="newEmployee.employee_lastName" name="lastName" #lastNameControl="ngModel">
+      <div *ngIf="lastNameControl.invalid && lastNameControl.touched" class="invalid-feedback d-block">
+        Last Name is required
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">Gender</label>
+      <select class="form-select" id="gender" required [(ngModel)]="newEmployee.employee_gender" name="gender"
+        #genderControl="ngModel">
+        <option selected disabled value="">Choose...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      <div *ngIf="genderControl.invalid && genderControl.touched" class="invalid-feedback d-block">
+        Please select a gender
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom02" class="form-label">Contact number</label>
+      <input type="text" class="form-control" id="contactNumber" placeholder="Contact number" required
+        [(ngModel)]="newEmployee.employee_contactNumber" name="contactNumber" #contactNumberControl="ngModel">
+      <div *ngIf="contactNumberControl.invalid && contactNumberControl.touched" class="invalid-feedback d-block">
+        Contact Number is required
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom02" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="eMail" placeholder="E-mail" [email]="true" required
+        [(ngModel)]="newEmployee.employee_emailAddress" name="email" #eMailControl="ngModel">
+      <div *ngIf="eMailControl.errors?.required && eMailControl.touched" class="invalid-feedback d-block">
+        E-mail is required
+      </div>
+      <div *ngIf="eMailControl.errors?.email && eMailControl.touched" class="invalid-feedback d-block">
+        E-mail is invalid
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom02" class="form-label">Birth Date</label>
+      <input type="date" class="form-control" id="birthDate" required [(ngModel)]="newEmployee.employee_birthDate"
+        name="birthDate" #birthDateControl="ngModel">
+      <div *ngIf="birthDateControl.invalid && birthDateControl.touched" class="invalid-feedback d-block">
+        Birth date is required
+      </div>
+    </div>
+
+    <label for="validationCustom02" class="form-label thin">Address</label>
+
+    <div class="col-md-4">
+
+      <input type="text" class="form-control" id="addressCity" placeholder="City" required
+        [(ngModel)]="newEmployee.employee_city" name="addressCity" #addressCityControl="ngModel">
+      <div *ngIf="addressCityControl.invalid && addressCityControl.touched" class="invalid-feedback d-block">
+        This field is required
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <input type="text" class="form-control" id="addressProvince" placeholder="Province" required
+        [(ngModel)]="newEmployee.employee_province" name="addressProvince" #addressProvinceControl="ngModel">
+      <div *ngIf="addressProvinceControl.invalid && addressProvinceControl.touched" class="invalid-feedback d-block">
+        This field is required
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <input type="text" class="form-control" id="addressCountry" placeholder="Country" required
+        [(ngModel)]="newEmployee.employee_country" name="addressCountry" #addressCountryControl="ngModel">
+      <div *ngIf="addressCountryControl.invalid && addressCountryControl.touched" class="invalid-feedback d-block">
+        This field is required
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Office Assignment</label>
+      <input type="text" class="form-control" id="officeAssignment" placeholder="Office" required
+        [(ngModel)]="newEmployee.employee_officeAssignment" name="officeAssignment" #officeAssignmentControl="ngModel">
+      <div *ngIf="officeAssignmentControl.invalid && officeAssignmentControl.touched" class="invalid-feedback d-block">
+        This field is required
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Position</label>
+      <input type="text" class="form-control" id="position" placeholder="Position" required
+        [(ngModel)]="newEmployee.employee_position" name="position" #positionControl="ngModel">
+      <div *ngIf="positionControl.invalid && positionControl.touched" class="invalid-feedback d-block">
+        This field is required
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label plain-number-field">Monthly Salary</label>
+      <input type="number" class="form-control" id="monthlySalary" placeholder="Salary" required
+        [(ngModel)]="newEmployee.employee_monthlySalary" name="monthlySalary" #monthlySalaryControl="ngModel">
+      <div *ngIf="monthlySalaryControl.invalid && monthlySalaryControl.touched" class="invalid-feedback d-block">
+        This field is required
+      </div>
+    </div>
+
+
+    <div class="col-aj-1-2">
+      <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Add Employee</button>
+    </div>
+
+    <div class="col-aj-1-2">
+      <button class="btn btn-danger" type="button" (click)="cancelForm(myForm, 1)">Cancel</button>
+    </div>
+
+  </form>
+
+</div>
